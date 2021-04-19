@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+    
+    
+    
+    <header>
+        <div>
+            <h1>Coding Quiz!</h1>
+        </div>
+    </header>
+    <body>
+        <section>
+            <div>
+                <h3 id="title">click to start</h3>
+                <h3 id='scoreEl'></h3>
+                <form id="score-submit-form" hidden>
+                    <label>Initials:</label><br>
+                    <input type="text" id="initials" placeholder="ABC">
+                    <input type = "submit" id="submit">
+                </form>
+            </div>
+            <div>
+                <ol id="score-board">
+                </ol>
+            </div>
+            <div>
+                <p hidden>Select one</p>
+                <button id="btn_one" hidden></button>
+                <button id="btn_two" hidden></button>
+                <button id="btn_three" hidden></button>
+                <button id="btn_four" hidden></button>
+            </div>
+            <div>
+                <button id="start">Start</button>
+                <button id="restart" hidden>Click to Restart</button>
+                <button id="reset-scores" hidden>Clear Highscores</button>
+                <p id="wrong_answer"></p>
+            </div>
+        </section>
+    </body>
+    <script src = assets\js\script.js></script>
+</html>

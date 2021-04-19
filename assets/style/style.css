@@ -1,0 +1,10 @@
+:root{
+    --button_color:red;
+    --bg_color:blue;
+    --detail_color:black;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
