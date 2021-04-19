@@ -1,5 +1,5 @@
 :root{
-    --button_color:red;
+    --button_color:purple
     --bg_color:blue;
     --detail_color:black;
 }
@@ -7,4 +7,101 @@
 *{
     margin: 0px;
     padding: 0px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    
+}
+
+header{
+    display:flex;
+    justify-content: space-between;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    margin-top: 10%;
+    margin-bottom: 2%;
+}
+
+#start-screen{
+
+    grid-column-start: 2;
+    grid-column-end: 4;
+    justify-content: center;
+
+}
+
+p{  
+    display:flex;
+    justify-content: center;
+    text-align: center;
+}
+
+h3{
+    display:flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.question-container{
+    grid-column-start: 2;
+    grid-column-end: 4;
+    margin:5% 20%;
+    display:flex;
+    flex-direction:column;
+}
+
+.score-container{
+    grid-column-start: 2;
+    grid-column-end: 4;
+    display:flex;
+   
+    justify-content: center;
+    margin-left: 3%;
+}
+
+.options-container{
+    grid-column-start: 2;
+    grid-column-end: 4;
+    display:flex;
+    justify-content: center;
+
+}
+
+.button{
+    border-radius: 3px;
+    padding: 4px 10px;
+    margin: 10px;
+    background: purple;
+    border: 3px solid purple;
+    color: white;
+}
+
+.button:hover{
+    background-color: white;
+    color: purple;
+}
+
+.h-btn{
+    background-color: white;
+    color: black;
+    border-color:white;
+    border-style: none;
+}
+
+.form-container{
+    display:flex;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+

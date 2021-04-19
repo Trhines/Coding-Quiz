@@ -4,41 +4,61 @@ var score = 10
 var test_over = false;
 
 var question_one = {
-    question : "What is 6 x 9?",
-    answers : [ {text: '54', correct: false}, 
-                {text: '42', correct: true}, 
-                {text: '69', correct: false}, 
-                {text: '42069', correct: false}
+    question : "What is the correct syntax for linking Javascript?",
+    answers : [ {text: '<script href="..."', correct: false}, 
+                {text: '<script src="..."', correct: true}, 
+                {text: '<link rel="javascript" href="...">', correct: false}, 
+                {text: '<a="..."', correct: false}
                 ],
 }
 
 var question_two = {
-    question : "What is the answer to life the universe and everything?",
-    answers : [ {text: 'food', correct: false},
-                {text: 'do you even know what the question is?', correct: false},
-                {text: 'yes', correct: false},
-                {text: '42', correct: true}
+    question : "Which method creates a prompt?",
+    answers : [ {text: 'alert()', correct: false},
+                {text: 'createPrompt()', correct: false},
+                {text: 'popUp()', correct: false},
+                {text: 'prompt()', correct: true}
                 ],
    
 }
 
 var question_three = {
-    question : "I'm out of good ideas for this one",
-    answers : [ {text: 'yes', correct: true},
-                {text: 'no', correct: false},
-                {text: 'maybe so', correct: false},
-                {text: 'lol', correct: false}
+    question : "What is the proper syntax for declaring a globally scoped variable?",
+    answers : [ {text: 'var x', correct: true},
+                {text: 'var int x', correct: false},
+                {text: 'let x', correct: false},
+                {text: 'const x', correct: false}
                 ],
 }
 
-var questions = [question_one, question_two, question_three]
+var question_four = {
+    question : "How do you declare a function in Javascript?",
+    answers : [ {text: 'private thisFunction()', correct: false},
+                {text: 'function = thisFunction()', correct: false},
+                {text: 'def thisFunction()', correct: false},
+                {text: 'function thisFunction()', correct: true}
+                ],
+}
+
+var question_five = {
+    question : "Which variable has a block scope?",
+    answers : [ {text: 'var x', correct: false},
+                {text: 'let x', correct: true},
+                {text: 'const x', correct: false},
+                {text: 'int x', correct: false}
+                ],
+}
+
+var questions = [question_one, question_two, question_three, question_four, question_five]
 var q_num = 0
 
 
 
 
 //setting html elements
-var title = document.getElementById("title")
+var title = document.getElementById("quiz-question")
+var instructions = document.getElementById("prompt-title")
+var scorePage = document.getElementById('score-page')
 var AnswerBtn_one = document.getElementById("btn_one")
 var AnswerBtn_two = document.getElementById("btn_two")
 var AnswerBtn_three = document.getElementById('btn_three')
@@ -104,6 +124,8 @@ function startQuiz(){
     test_over = false;
     populateQuestion()
     start.setAttribute('hidden', true)
+    instructions.setAttribute('hidden', true)
+    
     AnswerBtn_one.removeAttribute('hidden')
     AnswerBtn_two.removeAttribute('hidden')
     AnswerBtn_three.removeAttribute('hidden')
@@ -133,7 +155,7 @@ function displayEndScreen(){
 }
 
 function setTime() {
-    score = 10
+    score = 60
     // Sets interval in variable
     var timer = setInterval(function() {
       
@@ -163,12 +185,14 @@ function populateTable(){
     newEntry = document.createElement('li')
     newEntry.textContent = inputs.initials + " - " + inputs.score
     scoreBoard.appendChild(newEntry)
+    title.textContent = "Highscores"
     
 }
 
 
 //event listners
 start.addEventListener('click', function(){
+    console.log(instructions)
     startQuiz()
     setTime()
 })
@@ -201,9 +225,18 @@ submit.addEventListener('click', function(event){
     scoreForm.setAttribute('hidden', true)
     scoreBoard.removeAttribute('hidden')
     resetScores.removeAttribute('hidden')
-    restart.removeAttribute('hidden')
+    restart.removeAttribute('hidden')    
+})
 
-    
+scorePage.addEventListener('click', function(){
+    displayEndScreen()
+    populateTable()
+    start.setAttribute('hidden', true)
+    instructions.setAttribute('hidden', true)
+    scoreForm.setAttribute('hidden', true)
+    scoreBoard.removeAttribute('hidden')
+    resetScores.removeAttribute('hidden')
+    restart.removeAttribute('hidden')   
 })
 
 
